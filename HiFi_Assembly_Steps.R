@@ -683,7 +683,7 @@ Average segment length: 9804000.84
 
 # Next we rerun gfa stats with the previously generated estimated genome size from genome scope. This will allow us to generate
 # ng50 stats. To do this we rerun the gfastats stat generatio with an additional line 
-# Genomescope outputs a range of a min and a max genome size. The yreported using the max genome size estimate for their input
+# Genomescope outputs a range of a min and a max genome size. The reported using the max genome size estimate for their input
 # My maximum genome size was 2,743,204,927 bp 
 
 #!/bin/bash
@@ -702,17 +702,9 @@ cd $SLURM_SUBMIT_DIR
 module load biocontainers/default
 module load gfastats/1.3.6
 
-gfastats \
--f woodrat_hap1.fasta \
-2743204927 \
---stats \
-> woodrat_hap1_gfastats_egs.txt
+gfastats woodrat_hap1.fasta 2743204927 --stats --nstar-report > woodrat_hap1_gfastats_egs.txt
 
-gfastats \
--f woodrat_hap2.fasta \
-2743204927 \
---stats \
-> woodrat_hap2_gfastats_egs.txt
+gfastats woodrat_hap2.fasta 2743204927 --stats --nstar-report > woodrat_hap2_gfastats_egs.txt
 
 # After running the stats again with estimated genome size, these were the expanded results:
 
@@ -1880,7 +1872,10 @@ echo "Finished Mapping Pipeline through Duplicate Removal"
 
 
 
-
+hifiasm -o woodrat_hifiandhic.asm -t32 \
+--h1 WOODRAT_L_R1.fastq.gz,WOODRAT604_L_R1.fastq.gz \
+--h2 WOODRAT_L_R2.fastq.gz,WOODRAT604_L_R2.fastq.gz \
+m84082_260311_175030_s3.hifi_reads.bc2024.fastq.gz
 
 
 
