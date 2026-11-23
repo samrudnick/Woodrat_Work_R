@@ -1871,13 +1871,3 @@ echo "Finished Mapping Pipeline through Duplicate Removal"
 
 
 
-
-hifiasm -o woodrat_hifiandhic.asm -t32 \
---h1 WOODRAT_L_R1.fastq.gz,WOODRAT604_L_R1.fastq.gz \
---h2 WOODRAT_L_R2.fastq.gz,WOODRAT604_L_R2.fastq.gz \
-m84082_260311_175030_s3.hifi_reads.bc2024.fastq.gz
-
-
-
-
-
