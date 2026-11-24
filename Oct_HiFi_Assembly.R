@@ -132,8 +132,6 @@ http://genomescope.org/genomescope2.0/analysis.php?code=MOkGWBikvdnl7V7qww4R
 m84082_260311_175030_s3.hifi_reads.bc2024.fastq.gz
 WOODRAT604_L_R1.fastq.gz
 WOODRAT604_L_R2.fastq.gz
-WOODRAT_L_R1.fastq.gz
-WOODRAT_L_R2.fastq.gz
 
 #To actually run HiFiasm in the integrated mode the script I ran was:
 
@@ -153,7 +151,7 @@ cd $SLURM_SUBMIT_DIR
 module load biocontainers/default
 module load hifiasm/0.25.0
 
-hifiasm -o woodrat_hifiandhic.asm -t32 --h1 WOODRAT_L_R1.fastq.gz,WOODRAT604_L_R1.fastq.gz --h2 WOODRAT_L_R2.fastq.gz,WOODRAT604_L_R2.fastq.gz m84082_260311_175030_s3.hifi_reads.bc2024.fastq.gz
+hifiasm -o woodrat_hifiandhic.asm -t32 --h1 WOODRAT604_L_R1.fastq.gz --h2 WOODRAT604_L_R2.fastq.gz m84082_260311_175030_s3.hifi_reads.bc2024.fastq.gz
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
